@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img src="./images/parallax0.png" class="img1" alt="">
+        <img src="./images/parallax1.png" class="img2" alt="">
+        <img src="./images/parallax2.png" class="img3" alt="">
+         <img src="./images/parallax3.png" class="img4" alt="">
+        <img src="./images/parallax4.png" class="img5" alt="">
+        <img src="./images/parallax5.png" class="img6" alt="">
+        <img src="./images/parallax6.png" class="img7" alt="">
+        <img src="./images/parallax7.png" class="img8" alt="">
+        <img src="./images/parallax8.png" class="img9" alt="">
+    </div>
+    <div class="boxs">
+        <h2>thanks to scrolling</h2>
+        <h1>Comment me please</h1>
+        <h3>hows the parallax</h3>
+     </div>
+     <div class="lobsang">
+        <div class="content">
+            <div class="text">
+                <h1>that's What</h1>
+                <h3>i like</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing 
+                    elit. Non, quisquam! Enim quisquam veniam fugit iure beatae fuga, suscipit ipsa quia recusandae dolore rerum molestiae perferendis dolorum consequuntur corrupti repudiandae debitis.</p>
+                <a href="" class="view_all"> view all Products</a>
+                </div>
+            <div class="img-wrapper">
+                <img src="./images/pepsi001.png" class="pepsi_image" alt="">
+            </div>
+        </div>
+     </div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js" ></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/EaselPlugin.min.js"></script>
+     <script type="text/javascript">
+     gsap.timeline({
+         scrollTrigger:{
+             trigger:'.container',
+             scrub:true,
+             start:'top top',
+             end:'+=2000',
+             pin:true,
+             markers:true
+         }
+     })
+     .to('.img2', 2, {
+         y: 25,
+         ease: Bounce.easeOut,
+     })
+     .to('.img3', 2, {
+         y: 25,
+         ease: "bounce.out"
+     })
+     .to('.img4', 2, {
+         y: 25,
+         ease: "lineBreak.easeNone"
+     })
+     .to('.img5', 2, {
+         y: 25,
+         ease: "lineBreak.easeNone"
+     })
+     .to('.img6', 2, {
+         y: 25,
+         ease: "lineBreak.easeNone"
+     })
+     .to('.img7', 2, {
+         y: 10,
+         ease: "lineBreak.easeNone"
+     })
+     .to('.img8', 2, {
+         y: 10,
+         ease: "lineBreak.easeNone"
+     })
+     .to('.img9', 2, {
+         y: 10,
+         ease: "lineBreak.easeNone"
+     })
+    
+     .to(".box", 2, {
+         innerHeight: -170,
+         scaleY: 1.2
+     } )
+
+
+     gsap.timeline({
+        scrollTrigger:{
+            trigger:'.boxs',
+            scrub:true,
+            start:'top top',
+            end:'+=2000',
+            pin:true,
+            markers:true
+        }
+    })
+    .from('h2',{
+       x:500,
+       opacity:0,
+    })  
+    .from('h1',{
+       x:500,
+       opacity:0,
+    })  
+    .from('h3',{
+       x:500,
+       opacity:0,
+    })  
+
+    gsap.timeline({
+        scrollTrigger:{
+            trigger:'.lobsang',
+            scrub:true,
+            start:'top 60%',
+            end:'',
+             markers:true
+        }
+    })
+    .from('.pepsi_image',{
+        x:500
+    })
+     </script>
+</body>
+</html>
